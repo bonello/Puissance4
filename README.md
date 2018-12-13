@@ -22,3 +22,5 @@ Principe de fonctionnement :
 
 --> Les niveaux suivants correspondent aux différents tailles des serpents.
 
+--> Pour quitter le jeu, le joueur à la possibilité d'appuyer sur la touche ECHAP ou de cliquer sur la croix en haut de la fenêtre.
+
