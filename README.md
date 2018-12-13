@@ -18,9 +18,11 @@ Principe de fonctionnement :
 
 --> Le premier niveau consiste à manger la bulle qui défile sur l'écran avant de manger n'importe quel autre serpent. 
 
---> Le joueur ne peut que lui indiquer une direction à suivre (en haut, en bas, à gauche, à droite) grâce aux flèches directionnelles du clavier.
+--> Le deuxième niveau consiste à manger le petit serpent.
 
---> Les niveaux suivants correspondent aux différents tailles des serpents.
+--> Les 2 autres niveaux suivants sont repérables grâce à la taille des serpents.
+
+--> Le joueur ne peut que lui indiquer une direction à suivre (en haut, en bas, à gauche, à droite) grâce aux flèches directionnelles du clavier.
 
 --> Pour quitter le jeu, le joueur à la possibilité d'appuyer sur la touche ECHAP ou de cliquer sur la croix en haut de la fenêtre.
 
