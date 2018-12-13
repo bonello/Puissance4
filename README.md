@@ -24,5 +24,7 @@ Principe de fonctionnement :
 
 --> Le joueur ne peut que lui indiquer une direction à suivre (en haut, en bas, à gauche, à droite) grâce aux flèches directionnelles du clavier.
 
+--> Les résultats sont enregistrés dans un fichier .txt (niveau où on échoue)
+
 --> Pour quitter le jeu, le joueur à la possibilité d'appuyer sur la touche ECHAP ou de cliquer sur la croix en haut de la fenêtre.
 
