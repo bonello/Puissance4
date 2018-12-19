@@ -2,8 +2,7 @@
 
 #define SCREEN_WIDTH  1200
 #define SCREEN_HEIGHT 950
-#define BACKGROUND "Images/fond.bmp"
-#define PI 3.14159
+#define BACKGROUND "Images/fond.bmp" 
 
 /* PARAMETRES DES OBJETS */
 
@@ -16,7 +15,7 @@
 #define TAILLE_HEROS_X 32.25//38
 #define TAILLE_HEROS_Y 27 
 
-#define BULLE "Images/bulle.bmp" //
+#define BULLE "Images/bulle.bmp"
 
 #define PETIT  "Images/petit.bmp"
 
