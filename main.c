@@ -7,7 +7,6 @@
 #include "liste.h"
 #include "sprite.h"
 #include "SDL_ttf.h"
-//#include "SDL_mixer.h"
 
 
 /* MAIN */
@@ -484,6 +483,7 @@ int main(int argc, char* argv[])
 	    }          
 	}
 
+      /* SI LE JOUEUR A GAGNÉ*/
       if (victoire)
 	{
 	  SDL_Rect pos_texte2;
@@ -493,6 +493,7 @@ int main(int argc, char* argv[])
 	  fprintf(fichier, "Vous avez fini le jeu !! BRAVO !\n");
 	}
       
+      /* SI LE JEU EST FINI*/
       if (fini)
       {
 	  SDL_Rect pos_texte1;
