@@ -277,7 +277,7 @@ int main(int argc, char* argv[])
 	    petit->coordo_perso.x = 0;
 	}
       
-      /* DESSINER SERPENT 2 */
+      /* DESSINER LE KAA */
       if(!coll_kaa)
 	{
 	  SDL_BlitSurface(kaa->bmp, &kaa->pos_perso, fenetre, &kaa->coordo_perso);
