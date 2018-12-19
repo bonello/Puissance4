@@ -353,7 +353,7 @@ int main(int argc, char* argv[])
 	}
            
       
-      /*  COLLISION DE LA BULLE AVEC LE PERSONNAGE */
+      /*  COLLISION DE LA BULLE AVEC LE PERSONNAGE PRINCIPAL */
       if(collision(heros,bulle))
 	{
 	  free_sprite(bulle);
@@ -366,7 +366,6 @@ int main(int argc, char* argv[])
 	}  
       
       /* COLLISION DU PETIT SNAKE AVEC LE PERSONNAGE PRINCIPAL */
-   
       if(!test6 && test5 && collision(heros,petit))
 	{
 	  free_sprite(petit);
@@ -378,8 +377,7 @@ int main(int argc, char* argv[])
 	  test6 = true;
 	}
 	
-      /* COLLISION DE SERPENT 2 (KAA) AVEC LE PERSONNAGE PRINCIPAL */
-
+      /* COLLISION DE KAA AVEC LE PERSONNAGE PRINCIPAL */
       if(!test7 && test6 && collision(heros,kaa))
 	{
 	  free_sprite(kaa);
