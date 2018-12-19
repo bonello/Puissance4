@@ -1,6 +1,7 @@
 #include "liste.h"
 #include "sprite.h"
 
+/* LISTE DE SPRITE VIDE */
 sprite_list_t sprite_list_new_empty(void)
 {
   return NULL;
@@ -41,7 +42,7 @@ void sprite_list_remove(sprite_list_t* L, sprite_t tete)
 {
  if (*L == NULL)
     {
-      printf("*** ERREUR, appel de sprite_list_pop sur une liste vide ***\n");
+      printf("*** ERREUR, appel de sprite sur une liste vide ***\n");
       return;
     }
   sprite_list_t tmp = *L;
