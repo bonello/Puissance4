@@ -480,6 +480,7 @@ int main(int argc, char* argv[])
 	    {
 	      free_sprite(boss);
 	      victoire = 1;
+	      printf("Bravo ! Vous avez gagné ! \n");
 	    }          
 	}
 
