@@ -6,7 +6,7 @@
 #include "SDL.h"
 #include "liste.h"
 #include "sprite.h"
-#include "SDL_ttf.h"
+#include "SDL_ttf.h" 
 
 
 /* MAIN */
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 
   unsigned int coll_bulle = 0;
   unsigned int coll_petit = 0;
-  unsigned int coll_serpent2 = 0;
+  unsigned int coll_kaa = 0;
   unsigned int vie_du_boss = 0;
   
   /* INITIALISATION FICHIER DE SAUVEGARDE*/
@@ -102,21 +102,21 @@ int main(int argc, char* argv[])
   
   /* CHARGEMENT DE SERPENT 2 */
   char fname6[1024];
-  sprintf(fname6, SERPENT2);
-  sprite_t serpent2 = new_sprite(fname6, fenetre);
+  sprintf(fname6, KAA);
+  sprite_t kaa = new_sprite(fname6, fenetre);
   
-  serpent2->angle = 0;
+  kaa->angle = 0;
   
-  serpent2->coordo_perso.x = (rand()%SCREEN_WIDTH) ;
-  serpent2->coordo_perso.y = (rand()%SCREEN_HEIGHT);
+  kaa->coordo_perso.x = (rand()%SCREEN_WIDTH) ;
+  kaa->coordo_perso.y = (rand()%SCREEN_HEIGHT);
   
-  serpent2->x = serpent2->coordo_perso.x;
-  serpent2->y = serpent2->coordo_perso.y;
+  kaa->x = kaa->coordo_perso.x;
+  kaa->y = kaa->coordo_perso.y;
   
-  serpent2->pos_perso.x = 0;
-  serpent2->pos_perso.y = 0;
-  serpent2->pos_perso.w = 80;
-  serpent2->pos_perso.h = 80;
+  kaa->pos_perso.x = 0;
+  kaa->pos_perso.y = 0;
+  kaa->pos_perso.w = 80;
+  kaa->pos_perso.h = 80;
   
   
   /* CHARGEMENT DES SERPENTS */
@@ -279,20 +279,20 @@ int main(int argc, char* argv[])
 	}
       
       /* DESSINER SERPENT 2 */
-      if(!coll_serpent2)
+      if(!coll_kaa)
 	{
-	  SDL_BlitSurface(serpent2->bmp, &serpent2->pos_perso, fenetre, &serpent2->coordo_perso);
-	  serpent2->coordo_perso.x = serpent2->coordo_perso.x - 2*cos(serpent2->angle);
-	  serpent2->coordo_perso.y = serpent2->coordo_perso.y - 2*cos(serpent2->angle);
+	  SDL_BlitSurface(kaa->bmp, &kaa->pos_perso, fenetre, &kaa->coordo_perso);
+	  kaa->coordo_perso.x = kaa->coordo_perso.x - 2*cos(kaa->angle);
+	  kaa->coordo_perso.y = kaa->coordo_perso.y - 2*cos(kaa->angle);
 	  
-	  if (serpent2->coordo_perso.y < 0)
-	    serpent2->coordo_perso.y= SCREEN_HEIGHT - 80;
-	  if (serpent2->coordo_perso.y > SCREEN_HEIGHT - 80) 
-	    serpent2->coordo_perso.y = 0;
-	  if (serpent2->coordo_perso.x < 0)
-	    serpent2->coordo_perso.x= SCREEN_WIDTH - 80;
-	  if (serpent2->coordo_perso.x > SCREEN_WIDTH - 80) 
-	    serpent2->coordo_perso.x = 0;
+	  if (kaa->coordo_perso.y < 0)
+	    kaa->coordo_perso.y= SCREEN_HEIGHT - 80;
+	  if (kaa->coordo_perso.y > SCREEN_HEIGHT - 80) 
+	    kaa->coordo_perso.y = 0;
+	  if (kaa->coordo_perso.x < 0)
+	    kaa->coordo_perso.x= SCREEN_WIDTH - 80;
+	  if (kaa->coordo_perso.x > SCREEN_WIDTH - 80) 
+	    kaa->coordo_perso.x = 0;
 	}
 	
       
@@ -366,7 +366,7 @@ int main(int argc, char* argv[])
 	  test5 = true;
 	}  
       
-      /* COLLISION DU PETIT SNAKE AVEC LE PERSONNAGE */
+      /* COLLISION DU PETIT SNAKE AVEC LE PERSONNAGE PRINCIPAL */
    
       if(!test6 && test5 && collision(heros,petit))
 	{
@@ -379,12 +379,12 @@ int main(int argc, char* argv[])
 	  test6 = true;
 	}
 	
-      /* COLLISION DE SERPENT 2 AVEC LE PERSONNAGE */
+      /* COLLISION DE SERPENT 2 (KAA) AVEC LE PERSONNAGE PRINCIPAL */
 
-      if(!test7 && test6 && collision(heros,serpent2))
+      if(!test7 && test6 && collision(heros,kaa))
 	{
-	  free_sprite(serpent2);
-	  coll_serpent2 = 1;
+	  free_sprite(kaa);
+	  coll_kaa = 1;
 	  heros = p4;
 	  taille_heros_x = 125;
 	  niveau = 3;
@@ -392,7 +392,7 @@ int main(int argc, char* argv[])
 	  test7 = true;
 	}
       else{
-	if (collision(heros, serpent2))
+	if (collision(heros, kaa))
 	  {
 	    printf("GAME OVER\n");
 	    fini = 1;
@@ -402,7 +402,7 @@ int main(int argc, char* argv[])
       }
       
     
-      /* COLLISION DES SERPENTS AVEC LE PERSONNAGE 1 */
+      /* COLLISION DES SERPENTS AVEC LE PERSONNAGE PRINCIPAL */
       sprite_list_t tmp_liste_de_serpent = liste_serpent;
       while (tmp_liste_de_serpent != NULL) 
 	{
@@ -430,7 +430,7 @@ int main(int argc, char* argv[])
 	}
     
 
-      /* COLLISION DES SERPENTS 1 AVEC LE PERSONNAGE 1 */
+      /* COLLISION DES SERPENTS 1 AVEC LE PERSONNAGE PRINCIPAL */
       sprite_list_t tmp_liste_de_serpent1 = liste_serpent1;
       while (tmp_liste_de_serpent1 != NULL) 
 	{
