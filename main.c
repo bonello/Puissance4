@@ -220,7 +220,6 @@ int main(int argc, char* argv[])
       }
       
       
-      /* look for an event */
       if (SDL_PollEvent(&event))
 	{
 	  HandleEvent(event);
@@ -229,7 +228,7 @@ int main(int argc, char* argv[])
       /* DESSINER ARRIERE PLAN */
       SDL_BlitSurface(fond, NULL, fenetre, NULL);
       
-      /* DESSINER LE PERSONNAGE */
+      /* DESSINER LE PERSONNAGE PRINCIPAL */
       SDL_BlitSurface(heros->bmp, &heros->pos_perso, fenetre, &heros->coordo_perso);
       
       /* CHUTE DU PERSONNAGE */
